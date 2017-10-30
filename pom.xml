@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>helloworldmvc</module>
+        <module>hello-world-mvc</module>
+        <module>search-number-mvc</module>
     </modules>
 
     <build>
