@@ -12,6 +12,7 @@
         <module>hello-world-mvc</module>
         <module>search-number-mvc</module>
         <module>more-less</module>
+        <module>unit-testing</module>
     </modules>
 
     <build>
