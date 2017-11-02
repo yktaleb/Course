@@ -13,6 +13,10 @@ public class Arithmetic {
         return a / b;
     }
 
+    public double div(int a, int b) {
+        return a / b;
+    }
+
     public double mult(double a, double b) {
         return a * b;
     }
