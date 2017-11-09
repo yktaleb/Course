@@ -13,7 +13,18 @@
         <module>search-number-mvc</module>
         <module>more-less</module>
         <module>unit-testing</module>
+        <module>oop-samples</module>
+        <module>regular-expressions</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
