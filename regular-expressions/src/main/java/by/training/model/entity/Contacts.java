@@ -59,31 +59,30 @@ public class Contacts {
         this.skype = skype;
     }
 
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Contacts that = (Contacts) o;
-//
-//        if (!homePhone.equals(that.homePhone)) return false;
-//        if (!mobilePhone1.equals(that.mobilePhone1)) return false;
-//        if (mobilePhone2 != null ? !mobilePhone2.equals(that.mobilePhone2) : that.mobilePhone2 != null) return false;
-//        if (!email.equals(that.email)) return false;
-//        return skype.equals(that.skype);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = homePhone.hashCode();
-//        result = 31 * result + mobilePhone1.hashCode();
-//        result = 31 * result + (mobilePhone2 != null ? mobilePhone2.hashCode() : 0);
-//        result = 31 * result + email.hashCode();
-//        result = 31 * result + skype.hashCode();
-//        return result;
-//    }
-//
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contacts contacts = (Contacts) o;
+
+        if (!homePhone.equals(contacts.homePhone)) return false;
+        if (!mobilePhone1.equals(contacts.mobilePhone1)) return false;
+        if (!mobilePhone2.equals(contacts.mobilePhone2)) return false;
+        if (!email.equals(contacts.email)) return false;
+        return skype.equals(contacts.skype);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = homePhone.hashCode();
+        result = 31 * result + mobilePhone1.hashCode();
+        result = 31 * result + mobilePhone2.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + skype.hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {

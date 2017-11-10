@@ -41,36 +41,27 @@ public class Note {
         this.comment = comment;
     }
 
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Note note = (Note) o;
-//
-//        if (!subscriber.equals(note.subscriber)) return false;
-//        if (!contacts.equals(note.contacts)) return false;
-//        if (group != note.group) return false;
-//        if (!address.equals(note.address)) return false;
-//        if (!timeCreation.equals(note.timeCreation)) return false;
-//        if (!timeLastModification.equals(note.timeLastModification)) return false;
-//        return comment.equals(note.comment);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = subscriber.hashCode();
-//        result = 31 * result + contacts.hashCode();
-//        result = 31 * result + group.hashCode();
-//        result = 31 * result + address.hashCode();
-//        result = 31 * result + timeCreation.hashCode();
-//        result = 31 * result + timeLastModification.hashCode();
-//        result = 31 * result + comment.hashCode();
-//        return result;
-//    }
-//
-//
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Note note = (Note) o;
+
+        if (!subscriber.equals(note.subscriber)) return false;
+        if (!dateCreation.equals(note.dateCreation)) return false;
+        if (!dateLastModification.equals(note.dateLastModification)) return false;
+        return comment.equals(note.comment);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = subscriber.hashCode();
+        result = 31 * result + dateCreation.hashCode();
+        result = 31 * result + dateLastModification.hashCode();
+        result = 31 * result + comment.hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {

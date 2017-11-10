@@ -59,34 +59,30 @@ public class Address {
         this.apartmentNumber = apartmentNumber;
     }
 
-    //
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Address address = (Address) o;
-//
-//        if (!index.equals(address.index)) return false;
-//        if (!city.equals(address.city)) return false;
-//        if (!street.equals(address.street)) return false;
-//        if (!building.equals(address.building)) return false;
-//        if (!apartmentNumber.equals(address.apartmentNumber)) return false;
-//        return fullAddress != null ? fullAddress.equals(address.fullAddress) : address.fullAddress == null;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = index.hashCode();
-//        result = 31 * result + city.hashCode();
-//        result = 31 * result + street.hashCode();
-//        result = 31 * result + building.hashCode();
-//        result = 31 * result + apartmentNumber.hashCode();
-//        result = 31 * result + (fullAddress != null ? fullAddress.hashCode() : 0);
-//        return result;
-//    }
-//
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (!index.equals(address.index)) return false;
+        if (!city.equals(address.city)) return false;
+        if (!street.equals(address.street)) return false;
+        if (!building.equals(address.building)) return false;
+        return apartmentNumber.equals(address.apartmentNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = index.hashCode();
+        result = 31 * result + city.hashCode();
+        result = 31 * result + street.hashCode();
+        result = 31 * result + building.hashCode();
+        result = 31 * result + apartmentNumber.hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {

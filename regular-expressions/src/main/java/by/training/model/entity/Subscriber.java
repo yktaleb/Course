@@ -80,36 +80,38 @@ public class Subscriber {
         this.address = address;
     }
 
-    //    public String getFullName() {
-//        return surname + " " + name.substring(0, 1) + ".";
-//    }
-
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Subscriber that = (Subscriber) o;
-//
-//        if (!surname.equals(that.surname)) return false;
-//        if (!name.equals(that.name)) return false;
-//        if (!patronymic.equals(that.patronymic)) return false;
-//        return nickname.equals(that.nickname);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = surname.hashCode();
-//        result = 31 * result + name.hashCode();
-//        result = 31 * result + patronymic.hashCode();
-//        result = 31 * result + nickname.hashCode();
-//        return result;
-//    }
-//
     public String getFullName() {
         return surname + " " + name.substring(0, 1) + ".";
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Subscriber that = (Subscriber) o;
+
+        if (!surname.equals(that.surname)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!patronymic.equals(that.patronymic)) return false;
+        if (!nickname.equals(that.nickname)) return false;
+        if (!contacts.equals(that.contacts)) return false;
+        if (group != that.group) return false;
+        return address.equals(that.address);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = surname.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + patronymic.hashCode();
+        result = 31 * result + nickname.hashCode();
+        result = 31 * result + contacts.hashCode();
+        result = 31 * result + group.hashCode();
+        result = 31 * result + address.hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {
