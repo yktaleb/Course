@@ -15,6 +15,7 @@
         <module>unit-testing</module>
         <module>oop-samples</module>
         <module>regular-expressions</module>
+        <module>patterns</module>
     </modules>
 
     <dependencies>
