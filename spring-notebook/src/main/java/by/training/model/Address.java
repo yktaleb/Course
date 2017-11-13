@@ -1,63 +1,34 @@
-package by.training.model.entity;
+package by.training.model;
 
+import com.sun.javafx.beans.IDProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue
+    private Long id;
     private String index;
     private String city;
     private String street;
     private String building;
     private String apartmentNumber;
 
-    public Address() {
-    }
-
-    public Address(String index, String city, String street, String building, String apartmentNumber) {
-        this.index = index;
-        this.city = city;
-        this.street = street;
-        this.building = building;
-        this.apartmentNumber = apartmentNumber;
-    }
-
-    public String getIndex() {
-        return index;
-    }
-
-    public void setIndex(String index) {
-        this.index = index;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(String building) {
-        this.building = building;
-    }
-
-    public String getApartmentNumber() {
-        return apartmentNumber;
-    }
-
-    public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
-    }
-
+    @OneToMany(mappedBy = "address")
+    private Set<Note> subscribers;
 
     @Override
     public boolean equals(Object o) {

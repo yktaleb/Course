@@ -1,4 +1,4 @@
-package by.training.model.entity;
+package by.training.model;
 
 public enum Group {
     FAMILY("Family"),

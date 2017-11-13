@@ -1,6 +1,5 @@
 package by.training.model.entity;
 
-
 public class Subscriber {
     private String surname;
     private String name;

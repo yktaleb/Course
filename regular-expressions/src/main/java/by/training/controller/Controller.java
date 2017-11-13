@@ -17,6 +17,7 @@ public class Controller {
 
     public void processUser() {
         Scanner scanner = new Scanner(System.in);
+
         model.saveNote(new Util(view, scanner).inputNote());
         View.printMessage(model.getNoteBook().toString());
     }

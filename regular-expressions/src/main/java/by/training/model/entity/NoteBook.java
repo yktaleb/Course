@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 public class NoteBook {
 
+
+
     private List<Note> notes = new ArrayList<>();
 
     public void addNote(Note note) {

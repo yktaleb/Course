@@ -1,6 +1,5 @@
 package by.training.model.entity;
 
-
 public class Contacts {
     private String homePhone;
     private String mobilePhone1;
