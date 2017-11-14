@@ -81,13 +81,15 @@ public class Util {
     private Group inputGroup() {
         String value;
 
-        view.printMessage(Constants.INPUT_GROUP);
-        view.printMessage(Arrays.toString(Group.values()), "\n");
-
         while (true) {
+            view.printMessage(Constants.INPUT_GROUP);
+            view.printMessage(Arrays.toString(Group.values()), "\n");
             value = scanner.next();
             try {
-                return Group.fromString(value);
+                Group group = Group.fromString(value);
+                if (group != null) {
+                    return group;
+                }
             } catch (IllegalArgumentException ex) {
                 view.printMessage(Constants.WRONG_INPUT_MESSAGE);
             }
@@ -143,5 +145,6 @@ public class Util {
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
     }
+
 
 }

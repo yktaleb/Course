@@ -23,4 +23,16 @@ public interface Constants {
     String INPUT_APARTMENT_NUMBER = constants.getString("input_apartment_number");
     String INPUT_COMMENT = constants.getString("input_comment");
     String INPUT_GROUP = constants.getString("input_group");
+    String INPUT_AUTHORIZATION = constants.getString("input_authorization");
+    String CHOOSE_REGISTRATION = constants.getString("choose_registration");
+    String CHOOSE_LOGIN = constants.getString("choose_login");
+    String CHOOSE_EXIT = constants.getString("choose_exit");
+    String INPUT_NEW_LOGIN = constants.getString("input_new_login");
+    String INPUT_LOGIN = constants.getString("input_login");
+    String LOGIN_ALREADY_EXISTS = constants.getString("login_already_exists");
+    String LOGIN_NOT_FOUND = constants.getString("login_not_found");
+    String ACTIONS = constants.getString("actions");
+    String ACTION_ADD = constants.getString("action_add");
+    String ACTION_GET_ALL = constants.getString("action_get_all");
+    String ACTION_EXIT = constants.getString("action_exit");
 }
