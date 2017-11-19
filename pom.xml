@@ -16,6 +16,7 @@
         <module>oop-samples</module>
         <module>regular-expressions</module>
         <module>patterns</module>
+        <module>immutable-list</module>
     </modules>
 
     <dependencies>
