@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class ImmutableList<T> extends AbstractList<T> {
+public class ImmutableList<T> extends AbstractList<T> implements List<T> {
 
     private List<T> array;
 
