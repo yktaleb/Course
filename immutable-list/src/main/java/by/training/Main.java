@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(frequencyMentioning(Arrays.asList(4, 5, 6, 4, 5, 3, 4, 2, 4, 5, 7)));
-
         List<Integer> immutableList = new ImmutableList<>();
         immutableList.add(4);
         immutableList.add(4);
@@ -32,3 +30,5 @@ public class Main {
         return result;
     }
 }
+
+
