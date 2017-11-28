@@ -17,6 +17,7 @@
         <module>regular-expressions</module>
         <module>patterns</module>
         <module>immutable-list</module>
+        <module>calories-project</module>
     </modules>
 
     <dependencies>
