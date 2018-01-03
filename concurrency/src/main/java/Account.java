@@ -5,6 +5,7 @@ public class Account {
     private int balance;
     private int id;
     private Lock lock;
+    private int failCounter;
 
     public Account(int balance, int id) {
         this.balance = balance;
@@ -34,5 +35,13 @@ public class Account {
 
     public Lock getLock() {
         return lock;
+    }
+
+    public void incFailCounter() {
+        failCounter++;
+    }
+
+    public int getFailCounter() {
+        return failCounter;
     }
 }
