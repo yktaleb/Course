@@ -4,10 +4,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Account {
     private int balance;
     private int id;
+    private Lock lock;
 
     public Account(int balance, int id) {
         this.balance = balance;
         this.id = id;
+        lock = new ReentrantLock();
     }
 
     public void withdraw(int amount) {
@@ -30,5 +32,7 @@ public class Account {
         this.id = id;
     }
 
-
+    public Lock getLock() {
+        return lock;
+    }
 }

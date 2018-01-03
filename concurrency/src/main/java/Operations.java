@@ -1,13 +1,25 @@
+import java.util.concurrent.TimeUnit;
+
 public class Operations {
 
     private static Object monitor = new Object();
+    private static final int LOCK_WAIT_SEC = 5;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         final Account a = new Account(1000, 1);
         final Account b = new Account(2000, 2);
 
-        new Thread(() -> transferWithAdditionalMonitor(a, b, 500)).start();
-        transferWithAdditionalMonitor(b, a, 300);
+        new Thread(() -> {
+            try {
+                transferWithLock(a, b, 500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        transferWithLock(b, a, 300);
+
+        System.out.println(a.getBalance());
+        System.out.println(b.getBalance());
     }
 
     //deadlock
@@ -66,5 +78,31 @@ public class Operations {
         System.out.println("Successful operation");
     }
 
+    static void transferWithLock(Account acc1,
+                                 Account acc2,
+                                 int amount) throws InterruptedException {
+        acc1.getLock().lock();
+        try {
+            if (acc1.getBalance() < amount)
+                throw new InsufficientFundsException();
+            acc2.getLock().lock();
+            try {
+                acc1.withdraw(amount);
+                acc2.deposit(amount);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Successful operation");
+            } finally {
+                acc2.getLock().unlock();
+            }
+
+        } finally {
+            acc1.getLock().unlock();
+        }
+
+    }
 
 }
