@@ -18,6 +18,7 @@
         <module>patterns</module>
         <module>immutable-list</module>
         <module>calories-project</module>
+        <module>concurrency</module>
     </modules>
 
     <dependencies>
